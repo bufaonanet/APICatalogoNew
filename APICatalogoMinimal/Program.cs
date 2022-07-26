@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.//ConfigureServices
 builder.AddApiSwagger();
 builder.AddPersistence();
-builder.AddAutenticatioinJwt();
+builder.AddAutenticationJwt();
 builder.Services.AddCors();
 
 var app = builder.Build();

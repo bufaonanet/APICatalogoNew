@@ -1,4 +1,8 @@
 ﻿using APICatalogoNew.Context;
+using APICatalogoNew.Extensions;
+using APICatalogoNew.Filters;
+using APICatalogoNew.Repository;
+using APICatalogoNew.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -19,6 +23,11 @@ public class Startup
         services.AddDbContext<AppDbContext>(options =>
             options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
 
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddTransient<IMeuServico, MeuServico>();
+        services.AddScoped<ApiLoggingFilter>();
 
         services.AddControllers()
                 .AddJsonOptions(options => 
@@ -31,10 +40,12 @@ public class Startup
     public void Configure(WebApplication app, IWebHostEnvironment env)
     {
         if (env.IsDevelopment())
-        {
+        {          
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseConfigExceptionHandler();
 
         app.UseHttpsRedirection();
 

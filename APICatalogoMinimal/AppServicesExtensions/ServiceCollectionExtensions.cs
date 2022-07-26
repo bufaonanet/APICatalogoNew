@@ -68,7 +68,7 @@ public static class ServiceCollectionExtensions
         return builder;
     }
 
-    public static WebApplicationBuilder AddAutenticatioinJwt(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddAutenticationJwt(this WebApplicationBuilder builder)
     {
         builder.Services
         .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
