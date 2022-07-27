@@ -1,9 +1,11 @@
 ﻿
 using APICatalogoNew.Models;
+using APICatalogoNew.Pagination;
 
 namespace APICatalogoNew.Repository.Produtos;
 
 public interface IProdutosRepository : IRepository<Produto>
 {
-    IEnumerable<Produto> GetProdutosPorPreco();
+    Task<PagedList<Produto>> GetProdutos(ProdutosParameters parameters);
+    Task<IEnumerable<Produto>> GetProdutosPorPreco();
 }

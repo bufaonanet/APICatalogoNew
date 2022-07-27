@@ -26,9 +26,9 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         get { return _categoriaRepo ?? new CategoriaRepository(_context); }
 
     }
-    public void Commit()
+    public async Task<bool> CommitAsync()
     {
-        _context.SaveChanges();
+        return await _context.SaveChangesAsync() > 0;
     }
 
     public void Dispose()
