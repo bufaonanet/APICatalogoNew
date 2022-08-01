@@ -6,6 +6,7 @@ using APICatalogoNew.Repository;
 using APICatalogoNew.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -65,6 +66,14 @@ public class Startup
         services.AddScoped<ApiLoggingFilter>();
 
         services.AddCors();
+
+        services.AddApiVersioning(options =>
+        {
+            options.AssumeDefaultVersionWhenUnspecified = true;
+            options.DefaultApiVersion = new ApiVersion(1, 0);
+            options.ReportApiVersions = true;
+            //options.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
+        });
 
         services.AddControllers()
                 .AddJsonOptions(options =>
