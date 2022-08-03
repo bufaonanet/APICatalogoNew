@@ -67,13 +67,13 @@ public class Startup
 
         services.AddCors();
 
-        services.AddApiVersioning(options =>
-        {
-            options.AssumeDefaultVersionWhenUnspecified = true;
-            options.DefaultApiVersion = new ApiVersion(1, 0);
-            options.ReportApiVersions = true;
-            //options.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
-        });
+        //services.AddApiVersioning(options =>
+        //{
+        //    options.AssumeDefaultVersionWhenUnspecified = true;
+        //    options.DefaultApiVersion = new ApiVersion(1, 0);
+        //    options.ReportApiVersions = true;
+        //    options.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
+        //});
 
         services.AddControllers()
                 .AddJsonOptions(options =>
