@@ -14,6 +14,18 @@ public sealed class Produto : Entity
     public int CategoriaId { get; set; }
     public Categoria? Categoria { get; set; }
 
+    public Produto(string? nome, string? descricao, decimal preco, string? imagemUrl, int estoque, DateTime dataCadastro)
+    {
+        ValidateDomain(nome, descricao, preco, imagemUrl, estoque, dataCadastro);
+    }
+
+    public Produto(int id, string? nome, string? descricao, decimal preco, string? imagemUrl, int estoque, DateTime dataCadastro)
+    {
+        DomainExceptionValidation.When(id < 0, "Id inválido.");
+        Id = id;
+        ValidateDomain(nome, descricao, preco, imagemUrl, estoque, dataCadastro);
+    }
+
     public void Update(string nome, string descricao, decimal preco, string imagemUrl,
             int estoque, DateTime dataCadastro, int categoriaId)
     {
@@ -39,10 +51,10 @@ public sealed class Produto : Entity
 
         DomainExceptionValidation.When(preco < 0, "Valor do preço inválido");
 
+        DomainExceptionValidation.When(estoque < 0, "Estoque inválido");
+       
         DomainExceptionValidation.When(imagemUrl?.Length > 250,
             "O nome da imagem não pode exceder 250 caracteres");
-
-        DomainExceptionValidation.When(estoque < 0, "Estoque inválido");
 
         Nome = nome;
         Descricao = descricao;

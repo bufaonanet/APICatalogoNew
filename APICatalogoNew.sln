@@ -13,17 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{CB11EE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArch", "CleanArch", "{2B86D717-82DC-45AA-8F28-EEFEF96C70DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo.API", "CleanArch\Catalogo.API\Catalogo.API.csproj", "{310DA0E0-1958-48B4-8C64-2A889D667302}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalogo.API", "CleanArch\Catalogo.API\Catalogo.API.csproj", "{310DA0E0-1958-48B4-8C64-2A889D667302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo.Domain", "CleanArch\Catalogo.Domain\Catalogo.Domain.csproj", "{96512021-2AB2-4CE3-B3D7-1BE58807E467}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalogo.Domain", "CleanArch\Catalogo.Domain\Catalogo.Domain.csproj", "{96512021-2AB2-4CE3-B3D7-1BE58807E467}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo.Application", "CleanArch\Catalogo.Application\Catalogo.Application.csproj", "{016EB7BE-4255-41B1-B745-4DA247B5C51D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalogo.Application", "CleanArch\Catalogo.Application\Catalogo.Application.csproj", "{016EB7BE-4255-41B1-B745-4DA247B5C51D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo.Infrastructure", "CleanArch\Catalogo.Infrastructure\Catalogo.Infrastructure.csproj", "{70BD4099-8775-47B6-8DE6-2F257605F05B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalogo.Infrastructure", "CleanArch\Catalogo.Infrastructure\Catalogo.Infrastructure.csproj", "{70BD4099-8775-47B6-8DE6-2F257605F05B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo.CrossCutting", "CleanArch\Catalogo.CrossCutting\Catalogo.CrossCutting.csproj", "{4A65A3B2-2A31-4101-A422-AFD0BD2BC602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalogo.CrossCutting", "CleanArch\Catalogo.CrossCutting\Catalogo.CrossCutting.csproj", "{4A65A3B2-2A31-4101-A422-AFD0BD2BC602}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo.WebUI", "CleanArch\Catalogo.WebUI\Catalogo.WebUI.csproj", "{17A58E04-7E3B-4E57-BE71-D27287992FA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalogo.WebUI", "CleanArch\Catalogo.WebUI\Catalogo.WebUI.csproj", "{17A58E04-7E3B-4E57-BE71-D27287992FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogo.Domain.Tests", "CleanArch\Catalogo.Domain.Tests\Catalogo.Domain.Tests.csproj", "{D5285161-67D6-49E1-ACD0-DBAA0D83DACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{17A58E04-7E3B-4E57-BE71-D27287992FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17A58E04-7E3B-4E57-BE71-D27287992FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17A58E04-7E3B-4E57-BE71-D27287992FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5285161-67D6-49E1-ACD0-DBAA0D83DACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5285161-67D6-49E1-ACD0-DBAA0D83DACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5285161-67D6-49E1-ACD0-DBAA0D83DACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5285161-67D6-49E1-ACD0-DBAA0D83DACD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{70BD4099-8775-47B6-8DE6-2F257605F05B} = {2B86D717-82DC-45AA-8F28-EEFEF96C70DC}
 		{4A65A3B2-2A31-4101-A422-AFD0BD2BC602} = {2B86D717-82DC-45AA-8F28-EEFEF96C70DC}
 		{17A58E04-7E3B-4E57-BE71-D27287992FA4} = {2B86D717-82DC-45AA-8F28-EEFEF96C70DC}
+		{D5285161-67D6-49E1-ACD0-DBAA0D83DACD} = {2B86D717-82DC-45AA-8F28-EEFEF96C70DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43FB4866-55BA-4416-8CE2-959BE3F879A2}
