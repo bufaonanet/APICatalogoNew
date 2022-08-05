@@ -26,7 +26,7 @@ public sealed class Produto : Entity
         ValidateDomain(nome, descricao, preco, imagemUrl, estoque, dataCadastro);
     }
 
-    public void Update(string nome, string descricao, decimal preco, string imagemUrl,
+    public void Update(string? nome, string? descricao, decimal preco, string? imagemUrl,
             int estoque, DateTime dataCadastro, int categoriaId)
     {
         ValidateDomain(nome, descricao, preco, imagemUrl, estoque, dataCadastro);

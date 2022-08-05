@@ -23,7 +23,7 @@ public class ProdutoRepository : IProdutoRepository
     {
         //return await _productContext.Produtos.FindAsync(id);
         return await _productContext.Produtos.Include(c => c.Categoria)
-           .SingleOrDefaultAsync(p => p.Id == id);
+           .FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task<Produto> CreateAsync(Produto product)

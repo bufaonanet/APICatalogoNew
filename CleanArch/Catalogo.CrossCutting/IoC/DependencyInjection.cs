@@ -4,6 +4,7 @@ using Catalogo.Application.Services;
 using Catalogo.Domain.Interfaces;
 using Catalogo.Infrastructure.Context;
 using Catalogo.Infrastructure.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,9 @@ public static class DependencyInjection
         services.AddScoped<ICategoriaService, CategoriaService>();
 
         services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+
+        var myHandlers = AppDomain.CurrentDomain.Load("Catalogo.Application");
+        services.AddMediatR(myHandlers);
 
         return services;
     }
