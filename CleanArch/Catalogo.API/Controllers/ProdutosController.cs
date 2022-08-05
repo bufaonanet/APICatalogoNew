@@ -1,11 +1,13 @@
 ﻿using Catalogo.Application.DTOs;
 using Catalogo.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalogo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProdutosController : ControllerBase
     {
         private readonly IProdutoService _produtoService;

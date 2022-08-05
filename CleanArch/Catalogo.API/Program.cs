@@ -5,10 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddInfrastructureApi(builder.Configuration);
+builder.Services.AddInfrastructureJWT(builder.Configuration);
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddInfrastructureSwagger();
 
 var app = builder.Build();
 
@@ -21,6 +21,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStatusCodePages();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 SeedUserRoles(app);
